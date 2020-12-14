@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "FPModifier", 
+    "version": "1.0",
+    "description": "Prevent Fingerprinting",
+    "browser_action": {
+        "default_icon": "icons/icon.png",
+        "default_title": "FPModifier"
+    },
+   "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["js/aes.js","js/pad-zeropadding.js","js/mode-ecb.js","js/CanvasModification.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions" : [ "tabs", "activeTab"]
+}
+
